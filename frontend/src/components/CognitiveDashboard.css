@@ -1,0 +1,188 @@
+/* CognitiveDashboard.css - Status Hub Refinements */
+
+.status-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ── Status Cards Redesign ── */
+.status-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.status-card {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.status-card h3 {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #999;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+/* ── Waves & HUD Charts ── */
+.system-chart {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.system-chart-svg path {
+  fill: none;
+  stroke: #ff6b35;
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(255, 107, 53, 0.2));
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intensity-high .system-chart-svg path {
+  stroke-width: 4;
+  stroke: #ff3d00;
+}
+
+.system-chart-svg path.secondary {
+  stroke: #3b82f6;
+  stroke-width: 1.5;
+  opacity: 0.15;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+  margin-top: 12px;
+}
+
+.chart-labels span {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.55rem;
+  color: #bbb;
+}
+
+.current-state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  gap: 32px;
+}
+
+.current-state span {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #999;
+  font-weight: 700;
+}
+
+.current-state strong {
+  font-size: 1.6rem;
+  color: #ff6b35;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+/* ── Metrics Grid ── */
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.03);
+  gap: 16px;
+}
+
+.metric-icon-wrap {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  background: rgba(255, 107, 53, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b35;
+}
+
+.metric-icon-wrap .material-icons {
+  font-size: 22px;
+}
+
+.metric-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.metric-info label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.metric-item strong {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: -0.05em;
+  margin-left: auto;
+}
+
+/* ── Dark Mode Overrides ── */
+body.dark-theme .status-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .status-card h3 {
+  color: #bbb;
+}
+
+body.dark-theme .system-chart {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .current-state span {
+  color: #aaa;
+}
+
+body.dark-theme .metric-item {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .metric-item strong {
+  color: #fff;
+}
+
+body.dark-theme .metric-info label {
+  color: #aaa;
+}

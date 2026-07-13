@@ -1,0 +1,109 @@
+.trace-container {
+  background: var(--bg-2);
+  border: 1px solid var(--border-0);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 380px;
+}
+
+.trace-container.empty {
+  padding: 20px;
+  text-align: center;
+  border-style: dashed;
+}
+
+.trace-header {
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  padding: 8px 12px;
+  background: var(--bg-1);
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-bottom: 1px solid var(--border-0);
+}
+
+.trace-list {
+  padding: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.trace-list::-webkit-scrollbar { width: 3px; }
+.trace-list::-webkit-scrollbar-thumb { background: var(--border-1); border-radius: 2px; }
+
+.trace-item {
+  padding: 8px 10px;
+  background: var(--bg-1);
+  border-left: 2px solid var(--border-1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  animation: trace-slide 0.25s ease;
+  border-radius: 0 6px 6px 0;
+}
+
+@keyframes trace-slide {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.trace-item:hover {
+  background: var(--bg-2);
+  border-left-color: var(--pulse);
+}
+
+.trace-item.perception  { border-left-color: #d4a853; }
+.trace-item.recall      { border-left-color: #4ecdc4; }
+.trace-item.association { border-left-color: #a87ecf; }
+.trace-item.synthesis   { border-left-color: #e07a38; }
+.trace-item.reasoning   { border-left-color: #e07a38; }
+
+.trace-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trace-icon { font-size: 0.85rem; }
+
+.trace-message {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-1);
+  flex-grow: 1;
+  letter-spacing: 0.03em;
+}
+
+.trace-expand-hint {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-2);
+}
+
+.trace-data-glimpse {
+  margin-top: 8px;
+  padding: 10px;
+  background: var(--bg-0);
+  border: 1px solid var(--border-0);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-2);
+  overflow-x: auto;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

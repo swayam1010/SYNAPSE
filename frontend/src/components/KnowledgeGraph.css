@@ -1,0 +1,559 @@
+/* KnowledgeGraph.css - Premium Sci-Fi 3D Semantic Mesh styling */
+
+.mobile-scroll-spacer {
+  display: none;
+}
+
+.graph-stage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  gap: 10px;
+  padding: 0 16px 16px 16px;
+  overflow: hidden;
+}
+
+.graph-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.graph-title-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.graph-select {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 100px;
+  padding: 0 14px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.graph-select .material-icons {
+  color: #06b6d4;
+  font-size: 16px;
+}
+
+/* DB Status Badges */
+.db-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
+
+.db-status-badge.warning {
+  background: rgba(245, 158, 11, 0.08);
+  color: #d97706;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.db-status-badge.success {
+  background: rgba(16, 185, 129, 0.08);
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.db-status-badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* Actions */
+.graph-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.graph-icon-button {
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.graph-icon-button .material-icons {
+  font-size: 16px;
+}
+
+.graph-icon-button:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.06);
+  color: #ff6b35;
+}
+
+.graph-actions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 100px;
+  padding: 6px 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Network Container ── */
+.graph-network-container {
+  flex: 1;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md), inset 0 0 80px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(25px);
+  padding-left: 160px; /* Shifted slightly left compared to before to balance the canvas center */
+  box-sizing: border-box;
+}
+
+.brain-silhouette {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(85vw, 550px);
+  height: min(85vw, 550px);
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.85;
+}
+
+/* Tooltip micro-HUD */
+.graph-tooltip {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(255, 107, 53, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  color: #1e293b !important;
+  font-family: var(--font-mono), monospace !important;
+  font-size: 0.75rem !important;
+  pointer-events: none;
+}
+
+.graph-tooltip strong {
+  display: block;
+  font-size: 0.8rem;
+  color: #ff6b35;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding-bottom: 4px;
+}
+
+.tooltip-sub {
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Loading HUD overlay */
+.graph-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #ff6b35;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 10;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 24px 36px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.graph-loading .material-icons {
+  font-size: 32px;
+}
+
+/* Legend - Floating Absolutely in the 3D Container */
+.graph-legend {
+  position: absolute;
+  bottom: 16px;
+  left: calc(50% + 80px); /* Re-centered perfectly relative to the 160px shift */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 8px 24px;
+  border-radius: 100px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.03);
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.65rem;
+  color: #555;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.legend-item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.legend-item.core { color: #ff6b35; }
+.legend-item.core::before { background-color: #ff6b35; }
+
+.legend-item.high { color: #ff6b35; }
+.legend-item.high::before { background-color: #ff6b35; }
+
+.legend-item.medium { color: #ff9c7a; }
+.legend-item.medium::before { background-color: #ff9c7a; }
+
+.legend-item.entity { color: #a3a3a3; }
+.legend-item.entity::before { background-color: #a3a3a3; }
+
+/* ── Live Telemetry HUD Overlay ── */
+.graph-hud-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+  pointer-events: none; /* Let clicks pass through to 3D graph */
+}
+
+.hud-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 12px 14px;
+  width: 190px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.03);
+  pointer-events: auto; /* Re-enable clicks for panel contents */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.hud-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ff6b35;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  padding-bottom: 6px;
+}
+
+.hud-header .material-icons {
+  font-size: 14px;
+}
+
+.hud-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.hud-label {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.hud-value {
+  color: #1e293b;
+  font-weight: 800;
+  font-family: var(--font-mono), monospace;
+}
+
+.hud-value.status-glow {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.2);
+}
+
+.hud-entity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hud-entity-row {
+  display: flex;
+  align-items: center;
+  font-size: 0.65rem;
+  gap: 4px;
+}
+
+.entity-rank {
+  color: #94a3b8;
+  font-weight: 700;
+  width: 18px;
+}
+
+.entity-name {
+  color: #1e293b;
+  font-weight: 700;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.entity-connections {
+  color: #ff6b35;
+  font-weight: 800;
+  font-family: var(--font-mono), monospace;
+  background: rgba(255, 107, 53, 0.08);
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+/* Pulse animation utility */
+@keyframes pulse-light {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.pulse {
+  animation: pulse-light 1.5s infinite ease-in-out;
+}
+
+/* ── Holographic Scene Tooltips (Hover Outlined Style) ── */
+.graph-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  pointer-events: none !important;
+  text-shadow: 
+    -3px -3px 0 #fff, 
+     3px -3px 0 #fff, 
+    -3px  3px 0 #fff, 
+     3px  3px 0 #fff,
+    -3px  0px 0 #fff,
+     3px  0px 0 #fff,
+     0px -3px 0 #fff,
+     0px  3px 0 #fff !important;
+  padding: 0 !important;
+}
+
+.graph-tooltip strong {
+  font-weight: 800 !important;
+}
+
+/* ── Responsive Overrides ── */
+@media (max-width: 1024px) {
+  .graph-stage {
+    padding: 0 0 16px 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  .graph-toolbar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0 16px !important;
+  }
+  
+  .graph-actions {
+    position: absolute !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 100 !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: 100px !important;
+    padding: 6px 12px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+    width: auto !important;
+  }
+  
+  .graph-network-container {
+    padding-left: 0 !important;
+    border-radius: 16px !important;
+    height: 700px !important;
+    min-height: 700px !important;
+    width: 100% !important;
+    flex: none !important;
+    position: relative !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin-top: 16px !important;
+  }
+  
+  .graph-hud-overlay {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    padding: 8px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  
+  .hud-panel {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+  }
+  
+  .mobile-scroll-spacer {
+    display: block !important;
+  }
+  
+  /* On very small screens stack the HUD panels */
+  @media (max-width: 600px) {
+    .graph-hud-overlay {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
+
+/* ── Dark Theme Overrides for Graph Controls ── */
+body.dark-theme .graph-actions {
+  background: rgba(24, 24, 24, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-theme .graph-icon-button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ccc;
+}
+
+body.dark-theme .graph-icon-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ff6b35;
+}
+
+/* ── Graph Empty State Overlay ── */
+.graph-empty-state {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  max-width: 320px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  z-index: 10;
+  color: #1e293b;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.graph-empty-state h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0;
+  color: #ff6b35;
+  letter-spacing: -0.01em;
+}
+
+.graph-empty-state p {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.graph-empty-state .empty-icon {
+  font-size: 40px;
+  color: #ff6b35;
+  background: rgba(255, 107, 53, 0.08);
+  padding: 12px;
+  border-radius: 50%;
+}
+
+/* Dark Mode support for empty state */
+body.dark-theme .graph-empty-state {
+  background: rgba(18, 18, 18, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3) !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .graph-empty-state p {
+  color: #94a3b8 !important;
+}

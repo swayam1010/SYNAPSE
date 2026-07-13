@@ -1,0 +1,449 @@
+/* KnowledgeInput.css - Neural Inscription Workspace */
+
+.inscription-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  flex: 1;
+  min-height: 0;
+  padding: 0 40px 40px 40px;
+  overflow: hidden;
+}
+
+.inscription-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.inscription-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.inscription-icon {
+  width: 56px;
+  height: 56px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.inscription-icon .material-icons {
+  color: #ff6b35;
+  font-size: 24px;
+}
+
+.inscription-title h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.inscription-title p {
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.inscription-composer {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+  max-height: 600px;
+}
+
+.inscription-composer textarea {
+  flex: 1;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  resize: none;
+  font-weight: 500;
+}
+
+.inscription-footer {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inscription-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.char-count {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.busy-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #ff6b35;
+  text-transform: uppercase;
+}
+
+.inscription-btn {
+  background: #ff6b35;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+}
+
+.inscription-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(255, 107, 53, 0.3);
+}
+
+.inscription-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+  color: #059669;
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+}
+
+/* ── Analysis Sidebar ── */
+.inscription-sidebar {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.inscription-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.inscription-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.inscription-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.analysis-panel {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.panel-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.analysis-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.analysis-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis-section label,
+.analysis-metric label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #999;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.mini-meter {
+  height: 6px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.mini-fill {
+  height: 100%;
+  background: #ff6b35;
+  transition: width 0.3s;
+}
+
+.link-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.link-tag {
+  background: white;
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #555;
+  border: 1px solid rgba(0,0,0,0.03);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.link-tag .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ff6b35;
+}
+
+.empty-tag {
+  font-size: 0.7rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.layer-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.metric-sub {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.impact-item {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.impact-val {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  font-family: var(--font-display);
+}
+
+.impact-label {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.link-tag.reinforced {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.reinforced-icon {
+  font-size: 12px !important;
+  color: #10b981;
+  margin-left: 2px;
+}
+
+.existing-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.existing-link-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.existing-link-item .material-icons {
+  font-size: 18px;
+  color: #10b981;
+}
+
+.link-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-info strong {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.link-info span {
+  font-size: 0.6rem;
+  color: #999;
+}
+
+.panel-footer {
+  font-size: 0.65rem;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  margin-top: auto;
+}
+
+@keyframes pulse-blue {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.busy-tag.pulse {
+  animation: pulse-blue 1.5s infinite ease-in-out;
+}
+
+/* ── Responsive Overrides ── */
+@media (max-width: 1024px) {
+  .inscription-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 20px 20px 20px !important;
+    overflow-y: auto !important;
+    height: auto !important;
+  }
+  
+  .inscription-main {
+    padding-right: 0 !important;
+    overflow-y: visible !important;
+    height: auto !important;
+  }
+  
+  .inscription-sidebar {
+    padding-right: 0 !important;
+    overflow-y: visible !important;
+  }
+  
+  .analysis-panel {
+    height: auto !important;
+  }
+  
+  .inscription-composer {
+    min-height: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .inscription-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+  
+  .inscription-btn {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .inscription-composer {
+    padding: 16px !important;
+    min-height: 250px !important;
+  }
+  
+  .inscription-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  
+  .inscription-icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  
+  .inscription-title h3 {
+    font-size: 1rem !important;
+  }
+  
+  .analysis-panel {
+    padding: 16px !important;
+  }
+}
