@@ -4,31 +4,24 @@ from app.db.chroma import get_collection
 from typing import List
 import uuid
 import os
-import requests
+from fastembed import TextEmbedding
 
-class HuggingFaceServerlessEmbeddings(Embeddings):
-    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2", api_token: str = None):
-        self.model_name = model_name
-        self.api_token = api_token or os.getenv("HF_TOKEN", os.getenv("HUGGINGFACEHUB_API_TOKEN", ""))
-        self.api_url = f"https://api-inference.huggingface.co/models/{model_name}"
+class FastEmbeddings(Embeddings):
+    def __init__(self):
+        self.model = None
+
+    def _init_model(self):
+        if self.model is None:
+            # BAAI/bge-small-en-v1.5 is extremely lightweight and fast
+            self.model = TextEmbedding()
 
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
-        headers = {}
-        if self.api_token:
-            headers["Authorization"] = f"Bearer {self.api_token}"
-        
-        response = requests.post(
-            self.api_url,
-            headers=headers,
-            json={"inputs": texts, "options": {"wait_for_model": True}}
-        )
-        if response.status_code == 200:
-            return response.json()
-        else:
-            raise Exception(f"HF Embeddings API failed (Status {response.status_code}): {response.text}")
+        self._init_model()
+        return [list(map(float, x)) for x in self.model.embed(texts)]
 
     def embed_query(self, text: str) -> List[float]:
-        return self.embed_documents([text])[0]
+        self._init_model()
+        return [float(x) for x in next(self.model.embed([text]))]
 
 # Lazy-load the embedding model to avoid startup hangs
 _embeddings = None
@@ -47,11 +40,11 @@ def get_embeddings():
         return _embeddings
 
     try:
-        _embeddings = HuggingFaceServerlessEmbeddings()
-        print("[OK] Serverless HF Embeddings client initialized successfully")
+        _embeddings = FastEmbeddings()
+        print("[OK] Local FastEmbed client initialized successfully")
         return _embeddings
     except Exception as e:
-        print(f"[!] Failed to initialize serverless embeddings: {e}")
+        print(f"[!] Failed to initialize local FastEmbed: {e}")
         print("[!] Continuing without embeddings (sensory memory will be limited)")
         _embeddings_failed = True
         return None
