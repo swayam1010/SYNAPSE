@@ -13,12 +13,23 @@ def get_collection(name: str = "soma_sensory_memory"):
 def search_memories(query: str, user_id: str, limit: int = 10):
     """Semantic search for memories belonging to a user."""
     try:
+        from app.services.memory import get_embeddings
+        embeddings = get_embeddings()
+        if embeddings:
+            query_vector = embeddings.embed_query(query)
+            query_embeddings = [query_vector]
+        else:
+            query_embeddings = None
+
         collection = get_collection()
-        results = collection.query(
-            query_texts=[query],
-            n_results=limit,
-            where={"user_id": user_id}
-        )
+        if query_embeddings:
+            results = collection.query(
+                query_embeddings=query_embeddings,
+                n_results=limit,
+                where={"user_id": user_id}
+            )
+        else:
+            results = collection.get(where={"user_id": user_id}, limit=limit)
         return results
     except Exception as e:
         print(f"ChromaDB search error: {e}")
