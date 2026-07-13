@@ -3,7 +3,7 @@ from PIL import Image, ImageFilter
 
 def main():
     # Load original sleep image
-    img_path = r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep.png"
+    img_path = r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep.png"
     img = Image.open(img_path).convert("RGBA")
     width, height = img.size
     pixels = img.load()
@@ -64,7 +64,7 @@ def main():
             final_pixels[x, y] = (r, g, b, alpha_val)
             
     # 5. Save the perfect cutout
-    output_path = r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep_nobg.png"
+    output_path = r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep_nobg.png"
     final_img.save(output_path, "PNG")
     print("SUCCESS: Perfect glassy transparent cutout sleep_nobg.png created successfully!")
 

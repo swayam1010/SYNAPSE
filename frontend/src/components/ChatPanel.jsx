@@ -57,7 +57,7 @@ function ChatPanel({ messages, onSendMessage, onNewChat, userAvatar, isTyping, o
             </div>
             <div className="bubble-body">
               <div className="bubble-meta">
-                <strong>{msg.role === 'user' ? 'You' : 'Soma'}</strong>
+                <strong>{msg.role === 'user' ? 'You' : 'Synapse'}</strong>
               </div>
               <div className="bubble-text">{msg.content}</div>
               <div className="bubble-time">{msg.timestamp}</div>
@@ -65,7 +65,7 @@ function ChatPanel({ messages, onSendMessage, onNewChat, userAvatar, isTyping, o
           </div>
         ))}
         {isTyping && messages.length > 0 && messages[messages.length - 1].role === 'user' && (
-          <div className="chat-bubble-group soma typing">
+          <div className="chat-bubble-group synapse typing">
              <div className="chat-avatar">
                 <span className="material-icons">lens_blur</span>
              </div>
@@ -91,7 +91,7 @@ function ChatPanel({ messages, onSendMessage, onNewChat, userAvatar, isTyping, o
         <div className="input-field-wrap">
           <input 
             type="text" 
-            placeholder="Message Soma..." 
+            placeholder="Message Synapse..." 
             value={input}
             onChange={handleInputChange}
             disabled={isTyping}

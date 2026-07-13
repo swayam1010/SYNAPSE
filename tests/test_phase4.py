@@ -6,7 +6,7 @@ BASE_URL = "http://localhost:8000/api/v1"
 TEST_USER = "episodic_tester_999"
 
 def test_step4():
-    # 1. Talk to Soma (This goes into Working Memory)
+    # 1. Talk to Synapse (This goes into Working Memory)
     print("--- 1. Creating a memory in Working Memory ---")
     msg1 = "I just bought a new dog named Baxter."
     print(f"User: {msg1}")
@@ -27,7 +27,7 @@ def test_step4():
     
     # 3. Simulate a NEW session (with a clean working memory slate)
     # We'll use a slightly different user ID just to avoid the local SQLite working memory,
-    # forcing Soma to rely entirely on the ChromaDB Sensory/Episodic pull.
+    # forcing Synapse to rely entirely on the ChromaDB Sensory/Episodic pull.
     # We will pass the query and it should pull the Baxter memory because of ChromaDB.
     NEW_USER = "episodic_tester_999_new_session"
     
@@ -38,7 +38,7 @@ def test_step4():
     final_response = requests.post(f"{BASE_URL}/query", json={"text": target_query, "user_id": NEW_USER})
     data = final_response.json()
     
-    print(f"\nSoma: {data.get('response')}")
+    print(f"\nSynapse: {data.get('response')}")
     print(f"Sources: {data.get('sources')}")
 
 if __name__ == "__main__":

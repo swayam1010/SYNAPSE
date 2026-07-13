@@ -10,7 +10,7 @@ const LandingPage = ({ onEnter }) => {
       </div>
       
       <div className="hero-section fade-in">
-        <h1 className="hero-title t-display">SOMA</h1>
+        <h1 className="hero-title t-display">SYNAPSE</h1>
         <p className="hero-subtitle">A Brain-Inspired Cognitive AI System</p>
         <p className="hero-description">Observe cognition in real time.</p>
         
@@ -45,7 +45,7 @@ const LandingPage = ({ onEnter }) => {
       </div>
 
       <footer className="landing-footer">
-        <p className="t-label">Soma visualizes a brain-inspired computational model. It is not a biological brain simulation.</p>
+        <p className="t-label">Synapse visualizes a brain-inspired computational model. It is not a biological brain simulation.</p>
       </footer>
     </div>
   );

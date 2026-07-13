@@ -4,7 +4,7 @@
  * on every request. Auto-clears credentials on 401 (expired/invalid token).
  */
 export async function apiFetch(url, options = {}) {
-  const token = localStorage.getItem('soma_token');
+  const token = localStorage.getItem('synapse_token');
   const baseUrl = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
   const res = await fetch(`${baseUrl}${url}`, {
     ...options,
@@ -16,9 +16,9 @@ export async function apiFetch(url, options = {}) {
   });
 
   if (res.status === 401) {
-    localStorage.removeItem('soma_token');
-    localStorage.removeItem('soma_username');
-    window.dispatchEvent(new Event('soma-auth-expired'));
+    localStorage.removeItem('synapse_token');
+    localStorage.removeItem('synapse_username');
+    window.dispatchEvent(new Event('synapse-auth-expired'));
   }
 
   return res;

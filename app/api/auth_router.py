@@ -10,7 +10,7 @@ from app.db.neo4j_driver import clear_user_graph
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 
-_DEFAULT_PASSWORD = "soma_default_pass"
+_DEFAULT_PASSWORD = "synapse_default_pass"
 
 
 class AuthRequest(BaseModel):

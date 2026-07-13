@@ -3,7 +3,7 @@ from app.core.config import settings
 import logging
 import time
 
-logger = logging.getLogger("soma.analytics")
+logger = logging.getLogger("synapse.analytics")
 
 class AnalyticsManager:
     def __init__(self):
@@ -88,10 +88,10 @@ class AnalyticsManager:
 
         try:
             # 1. Increment total visits
-            client.incr("soma:analytics:total_visits")
+            client.incr("synapse:analytics:total_visits")
             
             # 2. Add visitor_id to unique visitors set
-            client.sadd("soma:analytics:unique_visitors", visitor_id)
+            client.sadd("synapse:analytics:unique_visitors", visitor_id)
             return True
         except Exception as e:
             print(f"Analytics: Failed to record hit in Redis: {e}")
@@ -112,11 +112,11 @@ class AnalyticsManager:
 
         try:
             # Fetch total visits
-            total_val = client.get("soma:analytics:total_visits")
+            total_val = client.get("synapse:analytics:total_visits")
             total = int(total_val) if total_val else 0
 
             # Fetch cardinality of unique set
-            unique = client.scard("soma:analytics:unique_visitors") or 0
+            unique = client.scard("synapse:analytics:unique_visitors") or 0
 
             return {
                 "total_visitors": total,

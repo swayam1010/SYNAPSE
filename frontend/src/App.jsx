@@ -1,4 +1,4 @@
-// Soma Cognitive Console: Refined Responsive Shell
+// Synapse Cognitive Console: Refined Responsive Shell
 import { useEffect, useState, useCallback } from 'react';
 import ChatPanel from './components/ChatPanel';
 import CognitiveBrainImageScene from './components/CognitiveBrainImageScene';
@@ -33,7 +33,7 @@ const COGNITIVE_PHASES = {
 
 function App() {
   const [activePage, setActivePage] = useState('console');
-  const [username, setUsername] = useState(localStorage.getItem('soma_username'));
+  const [username, setUsername] = useState(localStorage.getItem('synapse_username'));
   const [messages, setMessages] = useState([]);
   const [vitals, setVitals] = useState(null);
   const [trace, setTrace] = useState([]);
@@ -43,16 +43,16 @@ function App() {
   const [sleepPhaseIndex, setSleepPhaseIndex] = useState(0);
   const [sleepSummary, setSleepSummary] = useState(null);
   const [showStatus, setShowStatus] = useState(false);
-  const [darkMode, setDarkMode] = useState(localStorage.getItem('soma_dark') === 'true');
+  const [darkMode, setDarkMode] = useState(localStorage.getItem('synapse_dark') === 'true');
   const [showAnalyticsModal, setShowAnalyticsModal] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add('dark-theme');
-      localStorage.setItem('soma_dark', 'true');
+      localStorage.setItem('synapse_dark', 'true');
     } else {
       document.body.classList.remove('dark-theme');
-      localStorage.setItem('soma_dark', 'false');
+      localStorage.setItem('synapse_dark', 'false');
     }
   }, [darkMode]);
 
@@ -68,13 +68,13 @@ function App() {
     if (!username) return;
     
     // Verify if session hit is already registered to protect Upstash limits
-    if (sessionStorage.getItem('soma_hit_registered') === 'true') return;
+    if (sessionStorage.getItem('synapse_hit_registered') === 'true') return;
     
     // Get or create unique persistent visitor ID
-    let visitorId = localStorage.getItem('soma_visitor_id');
+    let visitorId = localStorage.getItem('synapse_visitor_id');
     if (!visitorId) {
       visitorId = 'visitor_' + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
-      localStorage.setItem('soma_visitor_id', visitorId);
+      localStorage.setItem('synapse_visitor_id', visitorId);
     }
     
     const registerHit = async () => {
@@ -84,7 +84,7 @@ function App() {
           body: JSON.stringify({ visitor_id: visitorId })
         });
         if (res.ok) {
-          sessionStorage.setItem('soma_hit_registered', 'true');
+          sessionStorage.setItem('synapse_hit_registered', 'true');
         }
       } catch (error) {
         console.error("Failed to register visitor telemetry hit:", error);
@@ -126,7 +126,7 @@ function App() {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
 
-      const token = localStorage.getItem('soma_token');
+      const token = localStorage.getItem('synapse_token');
       const baseUrl = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
       const response = await fetch(`${baseUrl}/api/v1/query/stream`, {
         method: 'POST',
@@ -169,7 +169,7 @@ function App() {
               // Phase E: Response Generation
               setCognitiveState(COGNITIVE_PHASES.RESPONDING);
               setMessages(prev => [...prev, { 
-                role: 'soma', 
+                role: 'synapse', 
                 content: data.response, 
                 timestamp: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) 
               }]);
@@ -261,14 +261,14 @@ function App() {
   ];
 
   return (
-    <div className="soma-shell">
-      <aside className="soma-sidebar">
+    <div className="synapse-shell">
+      <aside className="synapse-sidebar">
         <div className="brand-block">
           <div className="brand-mark">
             <span className="material-icons">lens_blur</span>
           </div>
           <div className="brand-copy">
-            <h1>SOMA</h1>
+            <h1>SYNAPSE</h1>
             <p>Cognitive Console</p>
           </div>
         </div>
@@ -320,7 +320,7 @@ function App() {
         </div>
       </aside>
 
-      <main className="soma-main-panel">
+      <main className="synapse-main-panel">
         {activePage === 'console' && (
           <section className="page-canvas fade-in">
             <div className="page-header" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>

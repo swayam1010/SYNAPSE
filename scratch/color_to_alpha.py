@@ -57,7 +57,7 @@ def color_to_alpha(img_path, output_path, bg_color):
 
 if __name__ == "__main__":
     color_to_alpha(
-        r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep.png",
-        r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep_nobg.png",
+        r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep.png",
+        r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep_nobg.png",
         (234, 234, 234)
     )

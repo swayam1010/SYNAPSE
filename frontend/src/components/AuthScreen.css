@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   AuthScreen (Neural Gloss & Soma Orange)
+   AuthScreen (Neural Gloss & Synapse Orange)
    ═══════════════════════════════════════════════ */
 
 .landing {
@@ -29,11 +29,11 @@
   animation: drift 20s infinite alternate ease-in-out;
 }
 
-/* Unified Soma Orange Palette Glow Orbs */
+/* Unified Synapse Orange Palette Glow Orbs */
 .orb-1 {
   width: 600px;
   height: 600px;
-  background: rgba(255, 107, 53, 0.15); /* Soma Orange Glow */
+  background: rgba(255, 107, 53, 0.15); /* Synapse Orange Glow */
   top: -10%;
   left: -10%;
 }
@@ -104,7 +104,7 @@
 .hero-core {
   position: absolute;
   inset: 22%;
-  background: #ff6b35; /* Soma Orange Core */
+  background: #ff6b35; /* Synapse Orange Core */
   border-radius: 50%;
   box-shadow: 0 0 30px rgba(255, 107, 53, 0.6);
   animation: heartbeat 2s infinite ease-in-out;

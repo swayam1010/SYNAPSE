@@ -19,7 +19,7 @@ export function SleepProgress({ phaseIndex, isConsolidating, onStart, summary, v
         {/* Left Column: Brain Image (ALWAYS VISIBLE!) */}
         <div className="sleep-left-panel">
           <div className="sleep-brain-wrap-combined">
-            <img src={sleepImg} className="sleep-brain-image-asset" alt="Soma Sleeping Brain" />
+            <img src={sleepImg} className="sleep-brain-image-asset" alt="Synapse Sleeping Brain" />
           </div>
         </div>
 
@@ -66,7 +66,7 @@ export function SleepProgress({ phaseIndex, isConsolidating, onStart, summary, v
             /* State 2: Active Consolidation Checklist Steps */
             <div className="sleep-progress-combined fade-in">
               <div className="sleep-copy-combined">
-                <h3>Soma is consolidating memories...</h3>
+                <h3>Synapse is consolidating memories...</h3>
                 <p>Cleaning, linking and strengthening knowledge.</p>
               </div>
 

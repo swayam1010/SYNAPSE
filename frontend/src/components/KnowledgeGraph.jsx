@@ -4,10 +4,10 @@ import * as THREE from 'three';
 import { apiFetch } from '../api';
 import './KnowledgeGraph.css';
 
-// Stunning conceptual mock graph representing SOMA's cognitive architecture
+// Stunning conceptual mock graph representing SYNAPSE's cognitive architecture
 const MOCK_GRAPH = {
   nodes: [
-    { id: 'SOMA', label: 'SOMA (Core)', connections: 10, type: 'core' },
+    { id: 'SYNAPSE', label: 'SYNAPSE (Core)', connections: 10, type: 'core' },
     { id: 'Cortex', label: 'Cortex Layer', connections: 8, type: 'core' },
     { id: 'Thalamus', label: 'Thalamus (Routing)', connections: 6, type: 'entity' },
     { id: 'Hippocampus', label: 'Hippocampus', connections: 7, type: 'entity' },
@@ -21,8 +21,8 @@ const MOCK_GRAPH = {
     { id: 'Groq API', label: 'Groq API', connections: 2, type: 'metric' }
   ],
   links: [
-    { source: 'SOMA', target: 'Cortex', label: 'ORCHESTRATES' },
-    { source: 'SOMA', target: 'Neural Inscription', label: 'ACCEPTS' },
+    { source: 'SYNAPSE', target: 'Cortex', label: 'ORCHESTRATES' },
+    { source: 'SYNAPSE', target: 'Neural Inscription', label: 'ACCEPTS' },
     { source: 'Cortex', target: 'Thalamus', label: 'ROUTES_BY' },
     { source: 'Cortex', target: 'Hippocampus', label: 'CONSOLIDATES' },
     { source: 'Cortex', target: 'Neocortex', label: 'STORES_IN' },
@@ -165,7 +165,7 @@ function KnowledgeGraph({ refreshTick }) {
 
   // Color mapper based on node type & degree
   const getNodeColor = (node) => {
-    if (node.id === 'SOMA') return '#ff6b35'; // Core Hub is SOMA Orange
+    if (node.id === 'SYNAPSE') return '#ff6b35'; // Core Hub is SYNAPSE Orange
     
     // For offline/mock mode, retain the pre-assigned structural category colors
     if (dbStatus !== 'online') {
@@ -191,7 +191,7 @@ function KnowledgeGraph({ refreshTick }) {
         <div className="graph-title-block">
           <button className="graph-select">
             <span className="material-icons">hub</span>
-            <span>{dbStatus === 'online' ? 'Real-time 3D Neo4j Graph' : '3D SOMA Cognitive Memory Mesh'}</span>
+            <span>{dbStatus === 'online' ? 'Real-time 3D Neo4j Graph' : '3D SYNAPSE Cognitive Memory Mesh'}</span>
           </button>
           {dbStatus !== 'online' && (
             <span className="db-status-badge warning pulse">
@@ -315,7 +315,7 @@ function KnowledgeGraph({ refreshTick }) {
             <span className="material-icons empty-icon pulse">bubble_chart</span>
             <h3>Neural Mesh Empty</h3>
             <p>
-              Your cognitive space is completely clean. Start chatting with SOMA or submit a sensory inscription to build your memory graph!
+              Your cognitive space is completely clean. Start chatting with SYNAPSE or submit a sensory inscription to build your memory graph!
             </p>
           </div>
         )}

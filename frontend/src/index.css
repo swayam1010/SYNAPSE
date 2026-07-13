@@ -74,7 +74,7 @@ img {
   -webkit-font-feature-settings: 'liga';
 }
 
-/* ── SOMA Premium Glassmorphic Dark Theme ── */
+/* ── SYNAPSE Premium Glassmorphic Dark Theme ── */
 body.dark-theme {
   --bg-app: #000000;
   --bg-sidebar: #050505;
@@ -168,8 +168,8 @@ body.dark-theme .bubble-meta strong {
   color: #e5e5e5 !important;
 }
 
-body.dark-theme .chat-bubble-group.soma .bubble-meta strong {
-  color: #ff8b54 !important; /* Elegant warm orange highlight for Soma in pure dark mode */
+body.dark-theme .chat-bubble-group.synapse .bubble-meta strong {
+  color: #ff8b54 !important; /* Elegant warm orange highlight for Synapse in pure dark mode */
 }
 
 /* Input elements dark mode overrides */
@@ -294,7 +294,7 @@ body.dark-theme .theme-toggle-btn {
   border-top-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-/* ── SOMA Memory Explorer Dark UI Overrides ── */
+/* ── SYNAPSE Memory Explorer Dark UI Overrides ── */
 body.dark-theme .memory-surface {
   background: rgba(18, 18, 18, 0.75) !important;
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
@@ -430,7 +430,7 @@ body.dark-theme .insight-btn {
   color: white !important;
 }
 
-/* ── SOMA Knowledge Graph Dark UI Overrides ── */
+/* ── SYNAPSE Knowledge Graph Dark UI Overrides ── */
 body.dark-theme .graph-network-container {
   background: rgba(18, 18, 18, 0.75) !important;
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
@@ -510,7 +510,7 @@ body.dark-theme .graph-loading {
   color: #ff6b35 !important;
 }
 
-/* ── SOMA Neural Inscription Dark UI Overrides ── */
+/* ── SYNAPSE Neural Inscription Dark UI Overrides ── */
 body.dark-theme .inscription-icon {
   background-color: rgba(24, 24, 24, 0.75) !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
@@ -607,7 +607,7 @@ body.dark-theme .panel-footer {
   color: #737373 !important;
 }
 
-/* ── SOMA Sleep Page & Consolidation Dark UI Overrides ── */
+/* ── SYNAPSE Sleep Page & Consolidation Dark UI Overrides ── */
 body.dark-theme .sleep-page-container {
   background-color: #000000 !important;
 }

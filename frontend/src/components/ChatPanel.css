@@ -48,7 +48,7 @@
   flex-direction: row-reverse;
 }
 
-.chat-bubble-group.soma {
+.chat-bubble-group.synapse {
   align-self: flex-start;
 }
 
@@ -58,7 +58,7 @@
   text-align: right;
 }
 
-.chat-bubble-group.soma .bubble-body {
+.chat-bubble-group.synapse .bubble-body {
   border-bottom-left-radius: 4px;
 }
 

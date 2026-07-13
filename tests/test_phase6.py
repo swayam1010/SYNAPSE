@@ -10,7 +10,7 @@ def test_step6():
     users = {
         "sleep_user_A": [
             "I love programming in Python. My favorite framework is FastAPI.",
-            "I'm building an AI project called Soma.",
+            "I'm building an AI project called Synapse.",
         ],
         "sleep_user_B": [
             "My cat's name is Luna and she is a British Shorthair.",
@@ -49,7 +49,7 @@ def test_step6():
     
     res = requests.post(f"{BASE_URL}/query", json={"text": query, "user_id": "post_sleep_tester"}, timeout=TIMEOUT)
     data = res.json()
-    print(f"  Soma: {data.get('response')}")
+    print(f"  Synapse: {data.get('response')}")
 
 if __name__ == "__main__":
     test_step6()

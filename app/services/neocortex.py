@@ -9,7 +9,7 @@ from app.db.neo4j_driver import neo4j_db
 
 # ── Blocked meta-nodes that should never become graph entities ──
 BLOCKED_NODES = {
-    "USER", "SOMA", "AI", "ASSISTANT", "BOT", "HUMAN", "SYSTEM",
+    "USER", "SYNAPSE", "AI", "ASSISTANT", "BOT", "HUMAN", "SYSTEM",
     "CHATBOT", "NEURAL CORE", "COGNITIVE CONSOLE", "BRAIN",
     "QUESTION", "ANSWER", "RESPONSE", "MESSAGE", "CHAT",
     "CONVERSATION", "HELLO", "HI", "HEY", "THANKS", "THANK YOU",
@@ -28,7 +28,7 @@ class KnowledgeGraphExtraction(BaseModel):
 
 def _clean_text(text: str) -> str:
     """Strip chat-format prefixes so the LLM sees pure content, not 'User: ...'."""
-    cleaned = re.sub(r'^(User|Soma|Assistant|AI|Human):\s*', '', text, flags=re.MULTILINE)
+    cleaned = re.sub(r'^(User|Synapse|Assistant|AI|Human):\s*', '', text, flags=re.MULTILINE)
     return cleaned.strip()
 
 
@@ -116,7 +116,7 @@ RULES:
 1. Nodes must be 1-3 word concept names, ALL CAPS. Example: "CRICKET", "DELHI", "MOM", "CODING"
 2. Relations must be simple verbs: LIKES, IS_A, LIVES_IN, PLAYS, WORKS_AT, HAS, KNOWS, STUDIES, etc.
 3. "I" or "my" in the text refers to "{owner}" — always use "{owner}" as the node name for the speaker.
-4. DO NOT create nodes named "USER", "SOMA", "AI", "ASSISTANT", or any chat/bot terms.
+4. DO NOT create nodes named "USER", "SYNAPSE", "AI", "ASSISTANT", or any chat/bot terms.
 5. If the text is just greetings or small talk with zero factual content, return an empty triples list.
 
 Text:

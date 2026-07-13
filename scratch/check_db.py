@@ -1,6 +1,6 @@
 import sqlite3
 
-db_path = "soma_sessions.db"
+db_path = "synapse_sessions.db"
 try:
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()

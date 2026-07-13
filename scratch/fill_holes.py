@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 def main():
-    img = cv2.imread(r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep.png", cv2.IMREAD_UNCHANGED)
+    img = cv2.imread(r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep.png", cv2.IMREAD_UNCHANGED)
     if img is None:
         print("Error loading image")
         return
@@ -48,7 +48,7 @@ def main():
     
     img[:, :, 3] = silhouette_smoothed
     
-    out_path = r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep_nobg.png"
+    out_path = r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep_nobg.png"
     cv2.imwrite(out_path, img)
     print("SUCCESS: Smooth edges applied!")
 

@@ -2,13 +2,13 @@ import cv2
 
 def main():
     # Load original sleep.png (the one with the solid background)
-    sleep_img = cv2.imread(r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep.png", cv2.IMREAD_UNCHANGED)
+    sleep_img = cv2.imread(r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep.png", cv2.IMREAD_UNCHANGED)
     if sleep_img is None:
         print("Error loading sleep.png")
         return
         
     # Load Brain_nobg.png
-    brain_nobg = cv2.imread(r"d:\PROJECTS\Soma\frontend\src\assets\brain\Brain_nobg.png", cv2.IMREAD_UNCHANGED)
+    brain_nobg = cv2.imread(r"d:\PROJECTS\Synapse\frontend\src\assets\brain\Brain_nobg.png", cv2.IMREAD_UNCHANGED)
     if brain_nobg is None:
         print("Error loading Brain_nobg.png")
         return
@@ -27,7 +27,7 @@ def main():
     sleep_img[:, :, 3] = alpha_resized
     
     # Save as sleep_nobg.png
-    cv2.imwrite(r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep_nobg.png", sleep_img)
+    cv2.imwrite(r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep_nobg.png", sleep_img)
     print("SUCCESS: Copied perfect alpha channel from Brain_nobg.png!")
 
 if __name__ == "__main__":

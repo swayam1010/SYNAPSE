@@ -6,7 +6,7 @@ BASE_URL = "http://127.0.0.1:8000/api/v1"
 
 def test_step2():
     # 1. Ingest a specific fact
-    fact = "The secret code for the Soma vault is 998877. This code was created by Dr. Aris in 1995."
+    fact = "The secret code for the Synapse vault is 998877. This code was created by Dr. Aris in 1995."
     print(f"Ingesting fact: {fact}")
     
     ingest_payload = {"text": fact}
@@ -22,7 +22,7 @@ def test_step2():
     query_payload = {"text": query}
     response = requests.post(f"{BASE_URL}/query", json=query_payload)
     
-    print("\n--- Response from Soma ---")
+    print("\n--- Response from Synapse ---")
     data = response.json()
     print(data.get("response"))
     print(f"\nSources: {data.get('sources')}")

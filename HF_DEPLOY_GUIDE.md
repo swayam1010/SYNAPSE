@@ -1,9 +1,9 @@
-# 🚀 Hugging Face Deployment Guide: Soma AI
+# 🚀 Hugging Face Deployment Guide: Synapse AI
 
-Follow these steps to deploy Soma to the cloud with **permanent memory**.
+Follow these steps to deploy Synapse to the cloud with **permanent memory**.
 
 ## 1. Setup Permanent Memory (Neo4j Aura)
-Since the Hugging Face free tier resets local files, we use **Neo4j Aura** (Cloud) to ensure Soma never forgets your conversations.
+Since the Hugging Face free tier resets local files, we use **Neo4j Aura** (Cloud) to ensure Synapse never forgets your conversations.
 
 1.  Go to [Neo4j Aura](https://neo4j.com/cloud/aura/) and create a free account.
 2.  Create a **New Instance** (AuraDB Free).
@@ -13,7 +13,7 @@ Since the Hugging Face free tier resets local files, we use **Neo4j Aura** (Clou
 ## 2. Create the Hugging Face Space
 1.  Log in to [Hugging Face](https://huggingface.co/).
 2.  Click **New Space**.
-3.  **Name**: `Soma` (or whatever you like).
+3.  **Name**: `Synapse` (or whatever you like).
 4.  **SDK**: Select **Docker**.
 5.  **Choose a Template**: Select "Blank."
 6.  **Space Hardware**: "Free tier" is fine.
@@ -40,8 +40,8 @@ git push hf main
 
 ## 5. What to Expect
 - **Build Phase**: Hugging Face will take 2-5 minutes to build the Docker image (it installs both Node.js for the frontend and Python for the backend).
-- **First Launch**: Once the status turns "Running," click the URL to open Soma!
-- **Persistent Knowledge**: Even if the Space restarts, anything Soma learned and stored in the **Knowledge Graph (Neo4j)** will still be there when you come back.
+- **First Launch**: Once the status turns "Running," click the URL to open Synapse!
+- **Persistent Knowledge**: Even if the Space restarts, anything Synapse learned and stored in the **Knowledge Graph (Neo4j)** will still be there when you come back.
 
 ---
 > [!TIP]

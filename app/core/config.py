@@ -9,7 +9,7 @@ env_path = Path(__file__).parent.parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "Soma"
+    PROJECT_NAME: str = "Synapse"
     VERSION: str = "0.1.0"
     API_V1_STR: str = "/api/v1"
     
@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     NEO4J_DATABASE: str = os.getenv("NEO4J_DATABASE", "neo4j")
     
     # SQLite Path
-    SQLITE_DB_PATH: str = os.getenv("SQLITE_DB_PATH", os.path.join(os.getcwd(), "data", "soma_sessions.db"))
+    SQLITE_DB_PATH: str = os.getenv("SQLITE_DB_PATH", os.path.join(os.getcwd(), "data", "synapse_sessions.db"))
 
     # Database — if set, uses Supabase Postgres; otherwise falls back to SQLite
     DATABASE_URL: str = os.getenv("DATABASE_URL", "")

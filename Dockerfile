@@ -45,7 +45,7 @@ ENV TORCH_HOME=/data/.cache/torch
 ENV HF_HOME=/data/.cache/huggingface
 ENV XDG_CACHE_HOME=/data/.cache
 ENV CHROMA_DB_PATH=/data/chroma_db
-ENV SQLITE_DB_PATH=/data/soma_sessions.db
+ENV SQLITE_DB_PATH=/data/synapse_sessions.db
 
 EXPOSE 8080
 

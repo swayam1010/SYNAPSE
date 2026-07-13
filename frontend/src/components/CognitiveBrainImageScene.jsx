@@ -69,7 +69,7 @@ function CognitiveBrainImageScene({ state = 'idle' }) {
         <img 
           src={brainImg} 
           className="brain-layer base active" 
-          alt="Soma Brain" 
+          alt="Synapse Brain" 
         />
 
         {/* State Glow Hubs (Subtle Ambient Backglow) */}

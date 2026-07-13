@@ -62,7 +62,7 @@ def ingest_text(text: str, metadata: dict = None, user_id: str = "default_user")
         print(f"[!] Skipping sensory memory ingestion (embeddings unavailable)")
         return 0
 
-    # Step 1: Chunk the text (Soma's parsing)
+    # Step 1: Chunk the text (Synapse's parsing)
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=500,
         chunk_overlap=50

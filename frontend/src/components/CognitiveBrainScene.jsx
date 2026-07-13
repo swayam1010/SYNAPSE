@@ -820,7 +820,7 @@ function CognitiveBrainScene({ brainState }) {
           <h3>{activeEvent?.phase ? activeEvent.phase.replace(/_/g, ' ') : 'Idle State'}</h3>
           <p className="cbs-region">{activeEvent?.region_label || 'Dormant network'}</p>
           <p className="cbs-reason">
-            {activeEvent?.reason || 'Soma is waiting for the next cognitive trigger.'}
+            {activeEvent?.reason || 'Synapse is waiting for the next cognitive trigger.'}
           </p>
           <div className="cbs-chip-row">
             <div className="cbs-chip">

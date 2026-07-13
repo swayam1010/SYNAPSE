@@ -3,23 +3,23 @@ import './Onboarding.css';
 
 const STEPS = [
   {
-    title: "Welcome to Soma",
-    content: "Soma is a brain-inspired cognitive architecture. Unlike traditional LLMs, Soma possesses multiple layers of memory that evolve through your interactions.",
+    title: "Welcome to Synapse",
+    content: "Synapse is a brain-inspired cognitive architecture. Unlike traditional LLMs, Synapse possesses multiple layers of memory that evolve through your interactions.",
     icon: "🧠"
   },
   {
     title: "Sensory Memory",
-    content: "Your raw data and facts are stored as vector embeddings. This allows Soma to recall specific details with high precision when you ask questions.",
+    content: "Your raw data and facts are stored as vector embeddings. This allows Synapse to recall specific details with high precision when you ask questions.",
     icon: "📡"
   },
   {
     title: "Semantic Memory",
-    content: "Soma builds a Knowledge Graph of entities and relationships. It doesn't just remember words; it understands how concepts connect in a vast synaptic network.",
+    content: "Synapse builds a Knowledge Graph of entities and relationships. It doesn't just remember words; it understands how concepts connect in a vast synaptic network.",
     icon: "🕸️"
   },
   {
     title: "Episodic & Sleep",
-    content: "Recent conversations are held in Working Memory. During a 'Sleep Cycle', Soma consolidates these experiences, pruning noise and strengthening important knowledge.",
+    content: "Recent conversations are held in Working Memory. During a 'Sleep Cycle', Synapse consolidates these experiences, pruning noise and strengthening important knowledge.",
     icon: "💤"
   }
 ];

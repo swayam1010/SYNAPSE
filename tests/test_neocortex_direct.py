@@ -9,7 +9,7 @@ from app.db.neo4j_driver import neo4j_db
 
 def test_direct():
     print(f"Neo4j Connected: {neo4j_db.driver is not None}")
-    fact = "Dr. Aris is the creator of the Soma Project. The Soma Project is an advanced cognitive architecture."
+    fact = "Dr. Aris is the creator of the Synapse Project. The Synapse Project is an advanced cognitive architecture."
     
     print("Calling extract_and_store_knowledge...")
     count = extract_and_store_knowledge(fact)

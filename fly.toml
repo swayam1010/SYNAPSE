@@ -1,4 +1,4 @@
-app = "soma-ai"
+app = "synapse-ai"
 primary_region = "sin"
 
 [build]
@@ -6,7 +6,7 @@ primary_region = "sin"
 [env]
   PORT = "8080"
   CHROMA_DB_PATH = "/data/chroma_db"
-  SQLITE_DB_PATH = "/data/soma_sessions.db"
+  SQLITE_DB_PATH = "/data/synapse_sessions.db"
 
 [http_service]
   internal_port = 8080
@@ -16,5 +16,5 @@ primary_region = "sin"
   min_machines_running = 1
 
 [[mounts]]
-  source = "soma_data"
+  source = "synapse_data"
   destination = "/data"

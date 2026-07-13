@@ -23,7 +23,7 @@ def reflect(state: AgentState):
     api_key = settings.GROQ_API_KEY if settings.GROQ_API_KEY else "dummy_key"
     llm = ChatGroq(model="llama-3.1-8b-instant", api_key=api_key)
     
-    prompt = f"""You are the internal monologue of Soma, a cognitive AI.
+    prompt = f"""You are the internal monologue of Synapse, a cognitive AI.
 Briefly reflect on the user's input. What is their core intent? 
 What cognitive connections should we prioritize?
 Keep it under 30 words. Express it as a raw, internal thought.
@@ -75,7 +75,7 @@ def call_model(state: AgentState):
     # Format the chat history into a string
     history_lines = []
     for msg in state["chat_history"]:
-        prefix = "User" if msg["role"] == "user" else "Soma"
+        prefix = "User" if msg["role"] == "user" else "Synapse"
         history_lines.append(f"{prefix}: {msg['content']}")
     history_str = "\n".join(history_lines) if history_lines else "No previous conversation."
 
@@ -85,7 +85,7 @@ def call_model(state: AgentState):
 
     from langchain_core.messages import SystemMessage, HumanMessage
 
-    system_prompt = f"""You are Soma, a brain-inspired cognitive AI. 
+    system_prompt = f"""You are Synapse, a brain-inspired cognitive AI. 
     
 ### OPERATING RULES:
 1. Be a friendly, intelligent, and natural conversationalist.

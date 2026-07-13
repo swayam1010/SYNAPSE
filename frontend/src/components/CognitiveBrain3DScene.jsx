@@ -49,7 +49,7 @@ function CognitiveBrain3DScene({ state = 'idle', refreshTick }) {
   const containerRef = useRef(null);
   const fgRef = useRef();
 
-  // Highlight the active lobe based on SOMA's cognitive phase
+  // Highlight the active lobe based on SYNAPSE's cognitive phase
   const activeRegion = PHASE_TO_REGION[state] || null;
 
   // Track layout resize
@@ -127,14 +127,14 @@ function CognitiveBrain3DScene({ state = 'idle', refreshTick }) {
         } else {
           // If Neo4j is offline/empty, seed a few highly visual concept cells
           // representing basic thoughts so it never looks completely empty
-          const sampleEntities = ['Komal', 'Student', 'SOMA', 'AI Architecture', 'Learning System'];
+          const sampleEntities = ['Komal', 'Student', 'SYNAPSE', 'AI Architecture', 'Learning System'];
           sampleEntities.forEach((entityId, index) => {
             const targetLobeId = LOBES[index % LOBES.length].id;
             nodes.push({ id: entityId, label: entityId, connections: 2, type: 'entity' });
             links.push({ source: targetLobeId, target: entityId, type: 'structural' });
           });
           links.push({ source: 'Komal', target: 'Student', label: 'IS_A', type: 'semantic' });
-          links.push({ source: 'SOMA', target: 'AI Architecture', label: 'BUILT_ON', type: 'semantic' });
+          links.push({ source: 'SYNAPSE', target: 'AI Architecture', label: 'BUILT_ON', type: 'semantic' });
         }
 
         setGraphData({ nodes, links });

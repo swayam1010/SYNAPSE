@@ -23,7 +23,7 @@ RULES:
 1. Nodes must be 1-3 word concept names, ALL CAPS. Example: "CRICKET", "DELHI", "MOM", "CODING"
 2. Relations must be simple verbs: LIKES, IS_A, LIVES_IN, PLAYS, WORKS_AT, HAS, KNOWS, STUDIES, etc.
 3. "I" or "my" in the text refers to "{owner}" — always use "{owner}" as the node name for the speaker.
-4. DO NOT create nodes named "USER", "SOMA", "AI", "ASSISTANT", or any chat/bot terms.
+4. DO NOT create nodes named "USER", "SYNAPSE", "AI", "ASSISTANT", or any chat/bot terms.
 5. If the text is just greetings or small talk with zero factual content, return: []
 
 Text:

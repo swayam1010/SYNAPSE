@@ -1,5 +1,5 @@
 """
-The Sleep Cycle — Soma's background consolidation process.
+The Sleep Cycle — Synapse's background consolidation process.
 
 This script mimics what the brain does during deep sleep:
 1. Replay: Read all recent conversations (Working Memory).
@@ -82,7 +82,7 @@ def run_sleep_cycle(keep_recent: int = 10):
         # --- Phase 1: REPLAY ---
         history = get_recent_messages(session_id, exchanges=50)
         conversation_text = "\n".join(
-            [f"{'User' if m['role'] == 'user' else 'Soma'}: {m['content']}" for m in history]
+            [f"{'User' if m['role'] == 'user' else 'Synapse'}: {m['content']}" for m in history]
         )
 
         # --- Phase 2: SUMMARIZE ---
@@ -133,7 +133,7 @@ def run_sleep_cycle(keep_recent: int = 10):
 # Allow running as a standalone script
 if __name__ == "__main__":
     print("=" * 60)
-    print("Soma Sleep Cycle - Starting consolidation...")
+    print("Synapse Sleep Cycle - Starting consolidation...")
     print("=" * 60)
     result = run_sleep_cycle()
     print(f"\n{'=' * 60}")

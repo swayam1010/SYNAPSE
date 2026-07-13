@@ -425,7 +425,7 @@ async def process_query_stream(request: QueryRequest, current_user: str = Depend
                         # Build neural mesh AFTER streaming the response so
                         # the user sees the reply immediately, then the graph
                         # refreshes once knowledge extraction finishes.
-                        exchange_text = f"User: {request.text}\nSoma: {final_response}"
+                        exchange_text = f"User: {request.text}\nSynapse: {final_response}"
                         try:
                             yield sse_event("brain_trace", build_brain_event(
                                 "memory",

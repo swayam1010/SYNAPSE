@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://komalsohal-soma.hf.space/api/:path*"
+      "destination": "https://komalsohal-synapse.hf.space/api/:path*"
     }
   ]
 }

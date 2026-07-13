@@ -1,7 +1,7 @@
 services:
   neo4j:
     image: neo4j:latest
-    container_name: soma_neo4j
+    container_name: synapse_neo4j
     ports:
       - "7687:7687"
       - "7474:7474"
@@ -15,7 +15,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.backend
-    container_name: soma_backend
+    container_name: synapse_backend
     ports:
       - "8000:8000"
     environment:
@@ -36,7 +36,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile.frontend
-    container_name: soma_frontend
+    container_name: synapse_frontend
     ports:
       - "80:80"
     depends_on:

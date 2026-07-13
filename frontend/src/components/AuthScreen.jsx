@@ -47,8 +47,8 @@ function AuthScreen({ onAuth, darkMode, setDarkMode }) {
         return;
       }
 
-      localStorage.setItem('soma_token',    data.access_token);
-      localStorage.setItem('soma_username', data.username);
+      localStorage.setItem('synapse_token',    data.access_token);
+      localStorage.setItem('synapse_username', data.username);
       onAuth(data.username);
     } catch {
       setError('Could not reach the server. Is it running?');
@@ -101,7 +101,7 @@ function AuthScreen({ onAuth, darkMode, setDarkMode }) {
             <div className="hero-core" />
           </div>
 
-          <h1 className="hero-title">SOMA</h1>
+          <h1 className="hero-title">SYNAPSE</h1>
           <p className="hero-tagline">Cognitive Architecture for AI</p>
           <p className="hero-desc">
             A brain-inspired system that builds memory as you talk.
@@ -192,7 +192,7 @@ function AuthScreen({ onAuth, darkMode, setDarkMode }) {
 
       {/* Footer */}
       <footer className="landing-footer">
-        <span>Soma</span>
+        <span>Synapse</span>
         <span className="footer-dot" />
         <span>Brain-Inspired AI</span>
       </footer>

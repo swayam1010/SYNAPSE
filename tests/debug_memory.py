@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from app.services.memory import ingest_text, retrieve_context
 
 def debug_memory():
-    fact = "The secret code for the Soma vault is 998877. This code was created by Dr. Aris in 1995."
+    fact = "The secret code for the Synapse vault is 998877. This code was created by Dr. Aris in 1995."
     print(f"STEP 1: Ingesting fact...")
     chunks = ingest_text(fact)
     print(f"Ingested {chunks} chunks.")

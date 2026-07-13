@@ -3,7 +3,7 @@ from PIL import Image
 
 def main():
     # Load the original sleep brain image
-    img_path = r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep.png"
+    img_path = r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep.png"
     img = Image.open(img_path).convert("RGBA")
     width, height = img.size
 
@@ -58,7 +58,7 @@ def main():
                 img.putpixel((x, y), (r, g, b, 0))
 
     # Save to sleep_nobg.png
-    output_path = r"d:\PROJECTS\Soma\frontend\src\assets\brain\sleep_nobg.png"
+    output_path = r"d:\PROJECTS\Synapse\frontend\src\assets\brain\sleep_nobg.png"
     img.save(output_path, "PNG")
     print("SUCCESS: Perfect transparent cutout sleep_nobg.png created successfully!")
 

@@ -47,7 +47,7 @@ async def generate_neural_spark():
     llm = ChatGroq(model="llama-3.1-8b-instant", api_key=api_key)
     
     prompt = f"""
-    You are the subconscious of Soma, a cognitive AI.
+    You are the subconscious of Synapse, a cognitive AI.
     You are dreaming about two connected concepts in your neural mesh: {entities[0]} and {entities[1]}.
     
     Spontaneously generate a brief 'Neural Spark'—a potential connection, observation, or insight 

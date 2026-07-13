@@ -3,7 +3,7 @@ import json
 
 url = "http://localhost:8000/api/v1/query"
 payload = {
-    "text": "Hello Soma!",
+    "text": "Hello Synapse!",
     "user_id": "test_user"
 }
 headers = {

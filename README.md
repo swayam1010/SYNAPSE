@@ -1,4 +1,4 @@
-# <p align="center"> SOMA: Cognitive Architecture for AI</p>
+# <p align="center"> SYNAPSE: Cognitive Architecture for AI</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Aesthetics-Neural%20Gloss%20%26%20Pure%20Black-ff6b35?style=for-the-badge" alt="Neural Gloss Theme">
@@ -7,22 +7,22 @@
 </p>
 
 <p align="center">
-  <img src="somasnap.png" alt="Soma Neural Console" width="850">
+  <img src="synapsesnap.png" alt="Synapse Neural Console" width="850">
 </p>
 
 ---
 
 ## Introduction
 
-**Soma** is a state-of-the-art, brain-inspired cognitive system designed to simulate human-like mental processes through a multi-layered, interactive memory architecture. Engineered with a premium **Neural Gloss** aesthetic and a pure-black deep workspace layout, it maps conversation streams directly into physical concepts, associations, and permanent memory.
+**Synapse** is a state-of-the-art, brain-inspired cognitive system designed to simulate human-like mental processes through a multi-layered, interactive memory architecture. Engineered with a premium **Neural Gloss** aesthetic and a pure-black deep workspace layout, it maps conversation streams directly into physical concepts, associations, and permanent memory.
 
-Unlike naive RAG systems, **Soma acts like a child's brain learning about the world from scratch**: it extracts clean, singular concept nodes and verb-style associations rather than plain raw chat text, assembling a growing semantic web of ideas that shapes how it responds to you.
+Unlike naive RAG systems, **Synapse acts like a child's brain learning about the world from scratch**: it extracts clean, singular concept nodes and verb-style associations rather than plain raw chat text, assembling a growing semantic web of ideas that shapes how it responds to you.
 
 ---
 
 ## The 4 Cognitive Memory Layers
 
-Soma's intelligence is organized into four distinct biological-style memory sectors:
+Synapse's intelligence is organized into four distinct biological-style memory sectors:
 
 ```text
        ┌────────────────────────────────────────────────────────┐
@@ -54,7 +54,7 @@ Soma's intelligence is organized into four distinct biological-style memory sect
 
 ## The Sleep Cycle (Cognitive Consolidation)
 
-To maintain an organized mind, Soma features an automated **Sleep Engine**. When triggered:
+To maintain an organized mind, Synapse features an automated **Sleep Engine**. When triggered:
 * **Pattern Consolidation:** Recent episodic experiences are summarized into long-term memories.
 * **Semantic Reinforcement:** High-importance concepts and relationship connections are merged into the Neo4j knowledge graph.
 * **Episodic Pruning:** Obsolete logs and redundant facts are cleaned, ensuring high processing speed.

@@ -20,7 +20,7 @@ def consolidate_memory(user_id: str, limit: int = 50):
     
     document_lines = [f"Conversation Memory from {current_time}:"]
     for msg in history:
-        prefix = "User" if msg["role"] == "user" else "Soma"
+        prefix = "User" if msg["role"] == "user" else "Synapse"
         document_lines.append(f"{prefix}: {msg['content']}")
         
     episodic_document = "\n".join(document_lines)

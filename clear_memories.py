@@ -4,7 +4,7 @@ from app.db.neo4j_driver import neo4j_db
 from app.core.config import settings
 
 def clear_all():
-    print("🧠 Initiating Lobotomy (Clearing all Soma Memories)...")
+    print("🧠 Initiating Lobotomy (Clearing all Synapse Memories)...")
     
     # 1. Clear Neo4j
     if neo4j_db.driver:
@@ -13,9 +13,9 @@ def clear_all():
         print("Neo4j wiped.")
     
     # 2. Clear SQLite (Working Memory)
-    if os.path.exists("soma_sessions.db"):
-        os.remove("soma_sessions.db")
-        print("soma_sessions.db wiped.")
+    if os.path.exists("synapse_sessions.db"):
+        os.remove("synapse_sessions.db")
+        print("synapse_sessions.db wiped.")
         
     # 3. Clear ChromaDB
     chroma_path = settings.CHROMA_DB_PATH
@@ -23,7 +23,7 @@ def clear_all():
         shutil.rmtree(chroma_path)
         print(f"ChromaDB directory ({chroma_path}) wiped.")
 
-    print("✅ All memories cleared. Soma is a blank slate again.")
+    print("✅ All memories cleared. Synapse is a blank slate again.")
 
 if __name__ == "__main__":
     clear_all()
